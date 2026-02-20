@@ -85,20 +85,9 @@ body {
     opacity: 0.7;
 }
 
-/* ================= MENU BURGER ================= */
-
-.menu-toggle {
-    display: none;
-    font-size: 26px;
-    cursor: pointer;
-    color: #fff;
-}
-
 /* ================= SCROLL ANIMATION ================= */
 
 
-
-/* ================= RESPONSIVE ================= */
 
 /* ================= RESPONSIVE ================= */
 
@@ -129,6 +118,7 @@ body {
         height: 90px;
     }
 }
+
 
 .cart-icon {
     cursor: pointer;
