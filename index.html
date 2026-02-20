@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudWeb AI - Création de Sites IA</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+</head>
+<body>
+
+<header id="mainHeader">
+    <div class="header-container">
+        <div class="logo">
+            <img src="partiel.png" alt="StudWeb Logo">
+        </div>
+
+        <nav class="nav">
+            <a href="#">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="#packs">Offres</a>
+            <a href="#quote">Devis</a>
+        </nav>
+ <span class="cart-icon" onclick="toggleCart()">🛒</span>
+        <div class="menu-toggle" id="menuToggle">
+            ☰
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <h2>Création de sites web pro grâce à l’IA</h2>
+    <p>Rapide • Moderne • Responsive • Optimisé • Professionnel</p>
+    <br>
+</section>
+
+<section class="section" id="services">
+    <h3>Nos Services Au Delà De La Perfection !</h3>
+    <div class="services">
+        <div class="card">
+            <h4>Site Vitrine</h4>
+            <p>Présentez votre activité avec un site qui vous correspond.</p>
+        </div>
+        <div class="card">
+            <h4>E-commerce</h4>
+            <p>Vendez vos produits en ligne grâce à nos services.</p>
+        </div>
+        <div class="card">
+            <h4>Automatisation IA</h4>
+            <p>Optimisez votre business avec un site clair et précis.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION CODE PROFESSIONNELLE -->
+<section class="section code-showcase">
+    <h3>Un développement propre et professionnel</h3>
+
+    <div class="code-gallery">
+        <img src="img1.png" alt="Code VS Code">
+        <img src="img2.png" alt="Développement web">
+        <img src="img3.png" alt="Programmation IA">
+    </div>
+
+    <p>
+        Nos sites sont développés avec des standards modernes,
+        un code optimisé et une architecture pensée pour la performance.
+    </p>
+</section>
+
+<!-- REALISATIONS -->
+<section class="section realizations">
+    <h3>Nos réalisations</h3>
+
+    <div class="realizations-grid">
+
+        <div class="realization-card reveal">
+            <img src="projet1.png" alt="Projet site vitrine">
+            <div class="realization-content">
+                <h4>Site vitrine professionnel</h4>
+                <p>Création d’un site moderne optimisé SEO pour une entreprise locale.</p>
+            </div>
+        </div>
+
+        <div class="realization-card reveal">
+            <img src="projet2.png" alt="Projet e-commerce">
+            <div class="realization-content">
+                <h4>Boutique e-commerce</h4>
+                <p>Interface rapide et optimisée pour maximiser les conversions.</p>
+            </div>
+        </div>
+
+        <div class="realization-card reveal">
+            <img src="projet3.jpg" alt="Automatisation IA">
+            <div class="realization-content">
+                <h4>Automatisation IA</h4>
+                <p>Automatisation de tâches et intégration IA pour gain de productivité.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SITES EN LIGNE -->
+<section class="section live-projects">
+    <h3>Projets en ligne</h3>
+
+    <div class="live-projects-grid">
+
+        <div class="live-project-card reveal">
+            <img src="helios-preview.png" alt="Helios Store">
+            
+            <div class="live-project-content">
+                <h4>Helios Store</h4>
+                <p>Boutique e-commerce moderne avec interface responsive et design premium.</p>
+                
+                <a href="https://helios-store.github.io/helios-store/" 
+                   target="_blank" 
+                   class="live-project-btn">
+                   Voir le site →
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section" id="packs">
+    <h3>Nos Offres</h3>
+    <div class="packs">
+
+        <div class="card">
+            <h4>Basic</h4>
+            <div class="price">200€</div>
+            <p>
+                1 à 3 pages<br>
+                Responsive<br>
+                Formulaire de contact
+            </p>
+            <button onclick="addToCart('Basic', 200)">Choisir</button>
+        </div>
+
+        <div class="card">
+            <h4>Premium</h4>
+            <div class="price">300€</div>
+            <p>
+                3 à 6 pages<br>
+                SEO optimisé<br>
+                Paiement intégré
+            </p>
+            <button onclick="addToCart('Premium', 300)">Choisir</button>
+        </div>
+
+        <div class="card">
+            <h4>Ultimate</h4>
+            <div class="price">400€</div>
+            <p>
+                Site complet<br>
+                E-commerce avancé<br>
+                Automatisation IA
+            </p>
+            <button onclick="addToCart('Ultimate', 400)">Choisir</button>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="quote">
+    <h3>Demander un devis personnalisé</h3>
+
+    <form id="quote-form" class="card" style="max-width:600px;margin:auto;display:flex;flex-direction:column;gap:15px;">
+        <input type="text" name="name" placeholder="Nom complet" required>
+        <input type="email" name="email" placeholder="Adresse email professionnelle" required>
+        <input type="text" name="company" placeholder="Nom de l'entreprise">
+
+        <select name="projectType" required>
+            <option value="">Type de projet</option>
+            <option value="Site vitrine">Site vitrine</option>
+            <option value="E-commerce">E-commerce</option>
+            <option value="Automatisation IA">Automatisation IA</option>
+            <option value="Projet sur mesure">Projet sur mesure</option>
+        </select>
+
+        <textarea name="description" rows="5"
+        placeholder="Décrivez votre projet en détail (objectifs, fonctionnalités, délais souhaités, etc.)"
+        required></textarea>
+
+        <button type="submit" class="checkout">
+            Envoyer la demande
+        </button>
+    </form>
+</section>
+
+<!-- PANIER -->
+<div class="cart" id="cart">
+    <span class="close-cart" onclick="closeCart()">✖</span>
+    <h3>Votre Panier</h3>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-total" id="cart-total">
+        Total : 0€
+    </div>
+
+    <button class="checkout" onclick="checkout()">Commander</button>
+</div>
+
+
+<footer>
+    <p>
+        Copyright © 2026
+        <a href="mentions-legales.html"> StudWeb AI</a>
+    </p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,498 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: rgb(255, 255, 255);
+    color: #020202;
+    transition: background 0.1s linear;
+}
+
+
+
+/* ================= HEADER WEGIC STYLE ================= */
+
+#mainHeader {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+
+    width: 100%;          /* 🔥 Largeur horizontale */
+    max-width: 1400px;   /* Limite sur grands écrans */
+
+    transform: translateX(-50%);
+    z-index: 1000;
+
+
+}
+
+/* Capsule */
+.header-container {
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 65px; /* Hauteur fixe */
+    padding: 0 35px 0 0px;
+    border-radius: 50px;
+
+    background: rgba(40, 40, 40, 0.75);
+    border: 1px solid rgba(255,255,255,0.1);
+
+    overflow: hidden;
+    transition: background 0.4s ease, border 0.4s ease;
+}
+
+/* ================= LOGO ================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: auto;
+}
+
+.logo img {
+    height: 120px; /* 🔥 Modifiable librement */
+    object-fit: contain;
+}
+
+/* ================= NAVIGATION ================= */
+
+.nav {
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    display: flex;
+    gap: 35px;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.nav a:hover {
+    opacity: 0.7;
+}
+
+/* ================= MENU BURGER ================= */
+
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* ================= SCROLL ANIMATION ================= */
+
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .nav {
+        position: absolute;
+        top: 80px;
+        right: 0;
+
+        background: rgba(40, 40, 40, 0.95);
+        /* blur supprimé */
+        
+        width: 220px;
+        padding: 20px;
+        border-radius: 20px;
+
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+.cart-icon {
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: auto;
+}
+
+/* HERO */
+
+.hero {
+    padding: 100px 10%;
+    text-align: center;
+    color: #000;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    padding: 15px 30px;
+    border: none;
+    background: white;
+    color: #4f46e5;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 60px 10%;
+}
+
+.section h3 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.services, .packs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* CARDS */
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.card h4 {
+    margin-bottom: 15px;
+}
+
+.card button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: #4f46e5;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/* PANIER */
+
+.cart {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    background: white;
+    box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+    padding: 30px;
+    transition: 0.4s;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.cart.active {
+    right: 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* FOOTER */
+
+footer{
+    height: 10vh;
+}
+footer p{
+    text-align: center;
+    line-height: 15vh;
+}
+footer p a{
+    text-decoration: none;
+    color: #f9f9f9;
+    font-weight: bold;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+    header {
+        flex-direction: column;
+    }
+    nav {
+        margin-top: 10px;
+    }
+}
+/* ANIMATIONS PREMIUM */
+
+.card {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.hero button {
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    transform: scale(1.05);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================= */
+/* SECTION CODE PROFESSIONNELLE */
+/* ============================= */
+
+.code-showcase {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.code-showcase h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.code-showcase p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.code-gallery {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.code-gallery img {
+    width: 320px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: all 0.4s ease;
+}
+
+.code-gallery img:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+/* ============================= */
+/* REALISATIONS */
+/* ============================= */
+
+.realizations {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.realizations-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.realization-card {
+    width: 320px;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.realization-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.realization-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.realization-content {
+    padding: 20px;
+}
+
+.realization-content h4 {
+    margin-bottom: 10px;
+}
+
+/* ============================= */
+/* ANIMATION SCROLL */
+/* ============================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Suppression item du panier */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.cart-item-name {
+    font-weight: 600;
+    margin-right: auto;
+}
+
+.remove-item {
+    border: none;
+    background: transparent;
+    color: #999;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.remove-item:hover {
+    color: #ef4444; /* Rouge lorsqu'on survole */
+    transform: scale(1.2);
+}
+
+/* ============================= */
+/* PROJETS EN LIGNE */
+/* ============================= */
+
+.live-projects {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.live-projects-grid {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.live-project-card {
+    width: 380px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.live-project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.live-project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.live-project-content {
+    padding: 25px;
+}
+
+.live-project-content h4 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.live-project-content p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.live-project-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #4f46e5;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.live-project-btn:hover {
+    background: #3b36c7;
+    transform: scale(1.05);
+}
+
+/* ============================= */
+/* GLOW LOGO + PANIER */
+/* ============================= */
+
+.logo img,
+.cart-icon {
+    transition: filter 0.3s ease, drop-shadow 0.3s ease;
+}
